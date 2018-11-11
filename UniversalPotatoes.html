@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="UniversalPotatoes.css" />
+	</head>
+	<body>
+	<div>
+		<h2>Potatoes: <span id="potatoes">0</span></h2>
+		<script type="text/javascript" src="UniversalPotatoes.js"></script>
+		<button onClick="clickPotatoes(1)">Farm Potato</button></br>
+		</br>
+	</div>
+
+	<div id="businessDiv">
+		<b>Business</b>
+		<hr align="left" style="width:25%">
+		Available Funds: $<span id="availableFunds">20.00</span></br>
+		Unsold Inventory: <span id="unsoldPotatoes">0</span></br>
+		<button id="lowerPriceButton" onClick="decPrice()">Lower</button>
+		<button id="raisePriceButton" onClick="incPrice()">Raise</button>
+		Price Per Potato: $<span id="pricePerPotato">0.25</span></br>
+		</br>
+	</div>
+	
+	<div id="farming">
+		<b>Farming</b>
+		<hr align="left" style="width:25%">
+		Potatoes Per Second: <span id="potatoFarmingRate">0</span></br>
+		</br>
+		<button onClick="buySeeds(1)">Buy Seeds</button>
+		<span id="seeds">1000</span> seeds</br>
+		Cost: $<span id="seedsCost">20</span></br>
+		</br>
+		<button id="buyFarmerButton" onClick="buyFarmer()">Buy Farmer</button>
+		<span id="farmerNumber2">0</span> farmers</br>
+		Farmer Cost: $<span id="farmerCost">5.00</span>
+		
+	</div>
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
+		
