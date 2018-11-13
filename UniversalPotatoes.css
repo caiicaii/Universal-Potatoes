@@ -1,0 +1,46 @@
+div {
+	margin: 1px;
+}
+
+#farmingDiv {
+	margin-top: 40px;
+}
+
+#consoleDiv {
+	float: left;
+	background: black;
+	width: 100%;
+	margin-top: -10px;
+}
+
+.flash {
+    -webkit-animation: flash 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0;
+}
+
+@-webkit-keyframes flash {
+    0% { 
+        opacity: 0.0;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.0;
+    }
+}
+
+.consoleOld {
+	font-family: "Times New Roman", monospace;
+	color: white;
+	font-size: 12px;
+}
+
+.console {
+	font-family: "Times New Roman", monospace;
+	color: white;
+	font-size: 12px;
+}
+
+
