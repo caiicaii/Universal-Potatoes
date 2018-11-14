@@ -31,7 +31,7 @@ div {
     }
 }
 
-.consoleOld {
+.consoleHistory {
 	font-family: "Times New Roman", monospace;
 	color: white;
 	font-size: 12px;
@@ -42,5 +42,42 @@ div {
 	color: white;
 	font-size: 12px;
 }
+
+.buttonStyle {
+	border: 1px solid #6C6C6C;
+	background: #C6C6C6;
+	background: linear-gradient(to bottom right, #FFFFFF, #666666);
+	
+	border-radius: 2px;
+	color: #000000;
+	text-shadow: #AAAAAA 0 1px 0;
+	font-size: 13px;
+	font-family: "Times New Roman", monospace;
+	vertical-align: middle;
+}
+
+#businessText {
+	margin-top: -5px;
+}
+
+#farmingText {
+	margin-top: -5px;
+}
+
+#leftColumn {
+	float: left;
+	width: 300px;
+}
+
+#middleColumn {
+	float: left;
+	width: 300px;
+	margin-left: 10px;
+}
+
+#researchText {
+	margin-top: -5px;
+}
+
 
 
