@@ -21,6 +21,7 @@ var incomeTracker = [0];
 var advertising = 1;
 var advertisingLevel = 1;
 var incomePerSale = 1;
+var research = 0;
 
 
 function clickPotatoes(number){
@@ -67,9 +68,11 @@ function incPrice(){
 }
 
 function decPrice(){
-	pricePerPotato = (Math.round((pricePerPotato - 0.01)*100))/100;
-	//document.getElementById("popularity").innerHTML = popularity.toFixed(2);
-	document.getElementById("pricePerPotato").innerHTML = pricePerPotato.toFixed(2);
+	if (pricePerPotato > 0.01){
+		pricePerPotato = (Math.round((pricePerPotato - 0.01)*100))/100;
+		//document.getElementById("popularity").innerHTML = popularity.toFixed(2);
+		document.getElementById("pricePerPotato").innerHTML = pricePerPotato.toFixed(2);
+	}
 }
 
 function buyFarmer(){
@@ -92,14 +95,37 @@ function buySeeds(){
 	document.getElementById("availableFunds").innerHTML = funds.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
-
-/*var save = {
-    cookies: cookies,
-    cursors: cursors,
-	farms: farms,
-	factories: factories,
-    prestige: prestige,
-	localStorage.setItem("save",JSON.stringify(save));
+function sellPotatoes(number){
+    if (unsoldPotatoes > 0) {
+        if (number > unsoldPotatoes){
+			number = unsoldPotatoes;
+			incomePerSale = (Math.floor((number * pricePerPotato)*1000))/1000;   
+			funds = (Math.floor((funds + incomePerSale)*100))/100;
+			income = income + incomePerSale;    
+			potatoesSold = potatoesSold + number;    
+			unsoldPotatoes = 0;
+        } else {
+			incomePerSale = (Math.floor((number * pricePerPotato)*1000))/1000;    
+			funds = (Math.floor((funds + incomePerSale)*100))/100;
+			income = income + incomePerSale;      
+			potatoesSold = potatoesSold + number;    
+			unsoldPotatoes = unsoldPotatoes - number;       
+        }
+    } 
 }
 
-var savegame = JSON.parse(localStorage.getItem("save"));*/
+function statisticsUpdate() {
+	document.getElementById("availableFunds").innerHTML = funds.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits:
+	2});
+	document.getElementById("unsoldPotatoes").innerHTML = Math.floor(unsoldPotatoes).toLocaleString();
+}
+
+window.setInterval(function(){
+	if (Math.random() < 0.05){
+		sellPotatoes(2);
+	}
+}, 100);
+
+window.setInterval(function(){
+	statisticsUpdate()
+}, 0.1);
