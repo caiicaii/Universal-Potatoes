@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<title>Universal Potatoes</title>
+		<link rel="shortcut icon" href="potato.ico" />
 		<link rel="stylesheet" type="text/css" href="UniversalPotatoes.css" /> 
 	</head>
 	
@@ -7,25 +10,25 @@
 		<div id="consoleDiv">
             <p class = "consoleHistory"> 
                 <span>&nbsp;.&nbsp;</span><span id="readout5"></span><br />
-                <span>&nbsp;.&nbsp;</span><span id="readout4"></span><br />
-                <span>&nbsp;.&nbsp;</span><span id="readout3"></span><br />
-                <span>&nbsp;.&nbsp;</span><span id="readout2"></span><br />
+                <span>&nbsp;.&nbsp;</span><span id="readout4"></span></br>
+                <span>&nbsp;.&nbsp;</span><span id="readout3"></span></br>
+                <span>&nbsp;.&nbsp;</span><span id="readout2"></span></br>
             </p>
             <p class = "console"> 
                 <span>&nbsp;>&nbsp;</span><span id="readout1">Welcome to Universal Potatoes</span><span id="cursor" class = "flash">|</span>
             </p>
-            
         </div> 
 		
+		<div id="leftColumn">
 		<div id="topDiv" class="statistics">
 			<h2>Potatoes: <span id="potatoes">0</span></h2>
 		</div>
 		
-		<div id="leftColumn">
+
+			<button class="buttonStyle" onClick="clickPotatoes(1)">Farm Potato</button></br>
+			</br>
+			
 			<div class="businessDiv">
-				<button class="buttonStyle" onClick="clickPotatoes(1)">Farm Potato</button></br>
-				</br>
-				
 				<b>Business</b></br>
 				<hr>
 				
@@ -35,6 +38,7 @@
 					<button class="buttonStyle" id="lowerPriceButton" onClick="decPrice()">Lower</button>
 					<button class="buttonStyle" id="raisePriceButton" onClick="incPrice()">Raise</button>
 					Price Per Potato: $<span id="pricePerPotato">0.25</span></br>
+					Popularity: <span id="popularity">32</span>%</br>
 					</br>
 				</p>
 			</div>
@@ -48,18 +52,21 @@
 					</br>
 				
 					<button class="buttonStyle" onClick="buySeeds(1)">Buy Seeds</button>
-					<span id="seeds">1000</span> seeds</br>
+					<span id="seeds">1000</span> <span id ="numOfSeeds">seeds</span></br>
 					Cost: $<span id="seedsCost">20</span></br>
 					</br>
-				
-					<button class="buttonStyle" id="buyFarmerButton" onClick="buyFarmer()">Buy Farmer</button>
-					<span id="farmerNumber2">0</span> farmers</br>
-					Farmer Cost: $<span id="farmerCost">5.00</span>
+					<div id="farmerDiv">
+						<button class="buttonStyle" id="buyFarmerButton" onClick="buyFarmer()">Buy Farmer</button>
+						<span id="farmerNumber2">0</span> farmers</br>
+						Farmer Cost: $<span id="farmerCost">5.00</span>
+					</div>
 				</p>
 			</div>
 		</div>
 		
-		<div id="middleColumn">
+		<div id="middleLeftColumn">
+		
+		<div id="researchDiv">
 			<b>Research:</b></br>
 			<hr>
 			<p id="researchText">
@@ -70,6 +77,125 @@
 				Research Points: <span id="researchPoints">0</span>/<span id="maxResearchPoints">500</span></br>
 			</p>
 		</div>
+
+		<div id="propertyDiv" class="gridContainer">
+			<b>Real Estate:</b></br>
+			<hr>
+				<span id="landMap">Land Map:</span>
+				</br>
+				<div class="gridItems">
+					<div class="landBlocks" id="gridItem1"><span id="land1">■</span></div>
+					<div class="landBlocks" id="gridItem2"><span id="land2">■</span></div>
+					<div class="landBlocks" id="gridItem3"><span id="land3">■</span></div>
+					<div class="landBlocks" id="gridItem4"><span id="land4">■</span></div>
+					<div class="landBlocks" id="gridItem5"><span id="land5">■</span></div>
+					<div class="landBlocks" id="gridItem6">■</div>
+					<div class="landBlocks" id="gridItem7">■</div>
+					<div class="landBlocks" id="gridItem8">■</div>
+					<div class="landBlocks" id="gridItem9">■</div>
+					<div class="landBlocks" id="gridItem10">■</div>
+					<div class="landBlocks" id="gridItem11">■</div>
+					<div class="landBlocks" id="gridItem12">■</div>
+					<div class="landBlocks" id="gridItem13">■</div>
+					<div class="landBlocks" id="gridItem14">■</div>
+					<div class="landBlocks" id="gridItem15">■</div>
+					<div class="landBlocks" id="gridItem16">■</div>
+					<div class="landBlocks" id="gridItem17">■</div>
+					<div class="landBlocks" id="gridItem18">■</div>
+					<div class="landBlocks" id="gridItem19">■</div>
+					<div class="landBlocks" id="gridItem20">■</div>
+					<div class="landBlocks" id="gridItem21">■</div>
+					<div class="landBlocks" id="gridItem22">■</div>
+					<div class="landBlocks" id="gridItem23">■</div>
+					<div class="landBlocks" id="gridItem24">■</div>
+					<div class="landBlocks" id="gridItem25">■</div>
+					<div class="landBlocks" id="gridItem26">■</div>
+					<div class="landBlocks" id="gridItem27">■</div>
+					<div class="landBlocks" id="gridItem28">■</div>
+					<div class="landBlocks" id="gridItem29">■</div>
+					<div class="landBlocks" id="gridItem30">■</div>
+					<div class="landBlocks" id="gridItem31">■</div>
+					<div class="landBlocks" id="gridItem32">■</div>
+					<div class="landBlocks" id="gridItem33">■</div>
+					<div class="landBlocks" id="gridItem34">■</div>
+					<div class="landBlocks" id="gridItem35">■</div>
+					<div class="landBlocks" id="gridItem36">■</div>
+					<div class="landBlocks" id="gridItem37">■</div>
+					<div class="landBlocks" id="gridItem38">■</div>
+					<div class="landBlocks" id="gridItem39">■</div>
+					<div class="landBlocks" id="gridItem40">■</div>
+					<div class="landBlocks" id="gridItem41">■</div>
+					<div class="landBlocks" id="gridItem42">■</div>
+					<div class="landBlocks" id="gridItem43">■</div>
+					<div class="landBlocks" id="gridItem44">■</div>
+					<div class="landBlocks" id="gridItem45">■</div>
+					<div class="landBlocks" id="gridItem46">■</div>
+					<div class="landBlocks" id="gridItem47">■</div>
+					<div class="landBlocks" id="gridItem48">■</div>
+					<div class="landBlocks" id="gridItem49">■</div>
+					<div class="landBlocks" id="gridItem50">■</div>
+					<div class="landBlocks" id="gridItem51">■</div>
+					<div class="landBlocks" id="gridItem52">■</div>
+					<div class="landBlocks" id="gridItem53">■</div>
+					<div class="landBlocks" id="gridItem54">■</div>
+					<div class="landBlocks" id="gridItem55">■</div>
+					<div class="landBlocks" id="gridItem56">■</div>
+					<div class="landBlocks" id="gridItem57">■</div>
+					<div class="landBlocks" id="gridItem58">■</div>
+					<div class="landBlocks" id="gridItem59">■</div>
+					<div class="landBlocks" id="gridItem60">■</div>
+					<div class="landBlocks" id="gridItem61">■</div>
+					<div class="landBlocks" id="gridItem62">■</div>
+					<div class="landBlocks" id="gridItem63">■</div>
+					<div class="landBlocks" id="gridItem64">■</div>
+					<div class="landBlocks" id="gridItem65">■</div>
+					<div class="landBlocks" id="gridItem66">■</div>
+					<div class="landBlocks" id="gridItem67">■</div>
+					<div class="landBlocks" id="gridItem68">■</div>
+					<div class="landBlocks" id="gridItem69">■</div>
+					<div class="landBlocks" id="gridItem70">■</div>
+					<div class="landBlocks" id="gridItem71">■</div>
+					<div class="landBlocks" id="gridItem72">■</div>
+					<div class="landBlocks" id="gridItem73">■</div>
+					<div class="landBlocks" id="gridItem74">■</div>
+					<div class="landBlocks" id="gridItem75">■</div>
+					<div class="landBlocks" id="gridItem76">■</div>
+					<div class="landBlocks" id="gridItem77">■</div>
+					<div class="landBlocks" id="gridItem78">■</div>
+					<div class="landBlocks" id="gridItem79">■</div>
+					<div class="landBlocks" id="gridItem80">■</div>
+					<div class="landBlocks" id="gridItem81">■</div>
+					<div class="landBlocks" id="gridItem82">■</div>
+					<div class="landBlocks" id="gridItem83">■</div>
+					<div class="landBlocks" id="gridItem84">■</div>
+					<div class="landBlocks" id="gridItem85">■</div>
+					<div class="landBlocks" id="gridItem86">■</div>
+					<div class="landBlocks" id="gridItem87">■</div>
+					<div class="landBlocks" id="gridItem88">■</div>
+					<div class="landBlocks" id="gridItem89">■</div>
+					<div class="landBlocks" id="gridItem90">■</div>
+					<div class="landBlocks" id="gridItem91">■</div>
+					<div class="landBlocks" id="gridItem92">■</div>
+					<div class="landBlocks" id="gridItem93">■</div>
+					<div class="landBlocks" id="gridItem94">■</div>
+					<div class="landBlocks" id="gridItem95">■</div>
+					<div class="landBlocks" id="gridItem96">■</div>
+					<div class="landBlocks" id="gridItem97">■</div>
+					<div class="landBlocks" id="gridItem98">■</div>
+					<div class="landBlocks" id="gridItem99">■</div>
+					<div class="landBlocks" id="gridItem100">■</div>
+				</div>
+				</br>
+			<div id ="buyPropertyDiv">
+				<button id="buyProperty" class="buttonStyle" onClick="buyProperty(1)">Buy Land</button>
+				<span id="propertyOwned">0</span> <span id="numOfPlots">plots</span> owned</br>
+				Cost: $<span id="propertyCost">2000.00</span></br>
+				</br>
+				Number of Plots Available: <span id="propertyRemaining">100</span>
+			</div>
+		</div>
+		
+
 	
 		<script type="text/javascript" src="UniversalPotatoes.js"></script>
 	</body>
