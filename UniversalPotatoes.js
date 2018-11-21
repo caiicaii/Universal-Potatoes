@@ -7,12 +7,16 @@ var farmerRate = 0;
 var farmerNumber = 0;
 var farmerNumber2 = 0;
 var farmerCost = 5;
-var maxFarmerRate = 5000;
+var maxFarmers = 50;
+var baseMaxFarmers = 50;
+var farmersPerPlot = 25;
+var baseFarmersPerPlot = 25;
+var plotFarmerBoost = 1;
 var unsoldPotatoes = 0;
-var funds = 9E18;
+var funds = 9E25;
 var pricePerPotato = 0.25;
 var seeds = 1000;
-var seedCost = 20;
+var seedCost = 15;
 var adCost = 100;
 var popularity = 5;
 var potatoesSold = 0;
@@ -29,12 +33,12 @@ var farmerBoost = 1;
 var researchFlag = 0;
 var upgradesFlag = 0;
 var seedPriceTimer = 0;
-var seedBasePrice = 20;
+var seedBasePrice = 15;
 var seedPriceCounter = 0;
 var propertyFlag = 0;
 var property = [];
 var propertyAvailable = 100;
-var propertyCost = 3000;
+var propertyCost = 150;
 var currentPropertyNum = 1;
 var propertyNumOwned = 0;
 
@@ -90,12 +94,12 @@ function decPrice(){
 }
 
 function buyFarmer(){
-	if (funds >= farmerCost && farmerRate < maxFarmerRate) {
+	if (funds >= farmerCost && farmerNumber < maxFarmers) {
 		farmerNumber = farmerNumber + 1;
 		funds = funds - farmerCost;
 		document.getElementById("farmerNumber2").innerHTML = farmerNumber;
 	}
-	farmerCost = (Math.pow(1.1, farmerNumber) + 5);
+	farmerCost = (Math.pow(1.08, farmerNumber) + 5);
 	document.getElementById("farmerCost").innerHTML = farmerCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 	document.getElementById("availableFunds").innerHTML = funds.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
@@ -138,15 +142,7 @@ function buyProperty(number){
 		document.getElementById("propertyOwned").innerHTML = propertyNumOwned;
 		document.getElementById("propertyRemaining").innerHTML = propertyAvailable;
 	}
-	if (propertyNumOwned < 10){
-		propertyCost = (Math.pow(1.1, propertyNumOwned) * 3000);
-	}
-	else if (propertyNumOwned < 25) {
-		propertyCost = ((Math.pow(1.08, propertyNumOwned) * 3000) + 1300);
-	}
-	else{
-		propertyCost = ((Math.pow(1.06, propertyNumOwned) * 3000) + 9000);
-	}
+	propertyCost = (Math.pow(1.1, propertyNumOwned) * 150);
 	document.getElementById("propertyCost").innerHTML = propertyCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 	document.getElementById("availableFunds").innerHTML = funds.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
@@ -200,6 +196,680 @@ function landUpdate(){
 	else{
 		document.getElementById("land5").style.display = "";
 	}
+	
+	if (propertyNumOwned < 6){
+		document.getElementById("land6").style.display = "none";
+	}
+	else{
+		document.getElementById("land6").style.display = "";
+	}
+	
+	if (propertyNumOwned < 7){
+		document.getElementById("land7").style.display = "none";
+	}
+	else{
+		document.getElementById("land7").style.display = "";
+	}
+	
+	if (propertyNumOwned < 8){
+		document.getElementById("land8").style.display = "none";
+	}
+	else{
+		document.getElementById("land8").style.display = "";
+	}
+	
+	if (propertyNumOwned < 9){
+		document.getElementById("land9").style.display = "none";
+	}
+	else{
+		document.getElementById("land9").style.display = "";
+	}
+	
+	if (propertyNumOwned < 10){
+		document.getElementById("land10").style.display = "none";
+	}
+	else{
+		document.getElementById("land10").style.display = "";
+	}
+	
+	if (propertyNumOwned < 11){
+		document.getElementById("land11").style.display = "none";
+	}
+	else{
+		document.getElementById("land11").style.display = "";
+	}
+	
+	if (propertyNumOwned < 12){
+		document.getElementById("land12").style.display = "none";
+	}
+	else{
+		document.getElementById("land12").style.display = "";
+	}
+	
+	if (propertyNumOwned < 13){
+		document.getElementById("land13").style.display = "none";
+	}
+	else{
+		document.getElementById("land13").style.display = "";
+	}
+	
+	if (propertyNumOwned < 14){
+		document.getElementById("land14").style.display = "none";
+	}
+	else{
+		document.getElementById("land14").style.display = "";
+	}
+	
+	if (propertyNumOwned < 15){
+		document.getElementById("land15").style.display = "none";
+	}
+	else{
+		document.getElementById("land15").style.display = "";
+	}
+	
+	if (propertyNumOwned < 16){
+		document.getElementById("land16").style.display = "none";
+	}
+	else{
+		document.getElementById("land16").style.display = "";
+	}
+	
+	if (propertyNumOwned < 17){
+		document.getElementById("land17").style.display = "none";
+	}
+	else{
+		document.getElementById("land17").style.display = "";
+	}
+	
+	if (propertyNumOwned < 18){
+		document.getElementById("land18").style.display = "none";
+	}
+	else{
+		document.getElementById("land18").style.display = "";
+	}
+	
+	if (propertyNumOwned < 19){
+		document.getElementById("land19").style.display = "none";
+	}
+	else{
+		document.getElementById("land19").style.display = "";
+	}
+	
+	if (propertyNumOwned < 20){
+		document.getElementById("land20").style.display = "none";
+	}
+	else{
+		document.getElementById("land20").style.display = "";
+	}
+	
+	if (propertyNumOwned < 21){
+		document.getElementById("land21").style.display = "none";
+	}
+	else{
+		document.getElementById("land21").style.display = "";
+	}
+	
+	if (propertyNumOwned < 22){
+		document.getElementById("land22").style.display = "none";
+	}
+	else{
+		document.getElementById("land22").style.display = "";
+	}
+	
+	if (propertyNumOwned < 23){
+		document.getElementById("land23").style.display = "none";
+	}
+	else{
+		document.getElementById("land23").style.display = "";
+	}
+	
+	if (propertyNumOwned < 24){
+		document.getElementById("land24").style.display = "none";
+	}
+	else{
+		document.getElementById("land24").style.display = "";
+	}
+	
+	if (propertyNumOwned < 25){
+		document.getElementById("land25").style.display = "none";
+	}
+	else{
+		document.getElementById("land25").style.display = "";
+	}
+	
+	if (propertyNumOwned < 26){
+		document.getElementById("land26").style.display = "none";
+	}
+	else{
+		document.getElementById("land26").style.display = "";
+	}
+	
+	if (propertyNumOwned < 27){
+		document.getElementById("land27").style.display = "none";
+	}
+	else{
+		document.getElementById("land27").style.display = "";
+	}
+	
+	if (propertyNumOwned < 28){
+		document.getElementById("land28").style.display = "none";
+	}
+	else{
+		document.getElementById("land28").style.display = "";
+	}
+	
+	if (propertyNumOwned < 29){
+		document.getElementById("land29").style.display = "none";
+	}
+	else{
+		document.getElementById("land29").style.display = "";
+	}
+	
+	if (propertyNumOwned < 30){
+		document.getElementById("land30").style.display = "none";
+	}
+	else{
+		document.getElementById("land30").style.display = "";
+	}
+	
+	if (propertyNumOwned < 31){
+		document.getElementById("land31").style.display = "none";
+	}
+	else{
+		document.getElementById("land31").style.display = "";
+	}
+	
+	if (propertyNumOwned < 32){
+		document.getElementById("land32").style.display = "none";
+	}
+	else{
+		document.getElementById("land32").style.display = "";
+	}
+	
+	if (propertyNumOwned < 33){
+		document.getElementById("land33").style.display = "none";
+	}
+	else{
+		document.getElementById("land33").style.display = "";
+	}
+	
+	if (propertyNumOwned < 34){
+		document.getElementById("land34").style.display = "none";
+	}
+	else{
+		document.getElementById("land34").style.display = "";
+	}
+	
+	if (propertyNumOwned < 35){
+		document.getElementById("land35").style.display = "none";
+	}
+	else{
+		document.getElementById("land35").style.display = "";
+	}
+	
+	if (propertyNumOwned < 36){
+		document.getElementById("land36").style.display = "none";
+	}
+	else{
+		document.getElementById("land36").style.display = "";
+	}
+	
+	if (propertyNumOwned < 37){
+		document.getElementById("land37").style.display = "none";
+	}
+	else{
+		document.getElementById("land37").style.display = "";
+	}
+	
+	if (propertyNumOwned < 38){
+		document.getElementById("land38").style.display = "none";
+	}
+	else{
+		document.getElementById("land38").style.display = "";
+	}
+	
+	if (propertyNumOwned < 39){
+		document.getElementById("land39").style.display = "none";
+	}
+	else{
+		document.getElementById("land39").style.display = "";
+	}
+	
+	if (propertyNumOwned < 40){
+		document.getElementById("land40").style.display = "none";
+	}
+	else{
+		document.getElementById("land40").style.display = "";
+	}
+	
+	if (propertyNumOwned < 41){
+		document.getElementById("land41").style.display = "none";
+	}
+	else{
+		document.getElementById("land41").style.display = "";
+	}
+	
+	if (propertyNumOwned < 42){
+		document.getElementById("land42").style.display = "none";
+	}
+	else{
+		document.getElementById("land42").style.display = "";
+	}
+	
+	if (propertyNumOwned < 43){
+		document.getElementById("land43").style.display = "none";
+	}
+	else{
+		document.getElementById("land43").style.display = "";
+	}
+	
+	if (propertyNumOwned < 44){
+		document.getElementById("land44").style.display = "none";
+	}
+	else{
+		document.getElementById("land44").style.display = "";
+	}
+	
+	if (propertyNumOwned < 45){
+		document.getElementById("land45").style.display = "none";
+	}
+	else{
+		document.getElementById("land45").style.display = "";
+	}
+	
+	if (propertyNumOwned < 46){
+		document.getElementById("land46").style.display = "none";
+	}
+	else{
+		document.getElementById("land46").style.display = "";
+	}
+	
+	if (propertyNumOwned < 47){
+		document.getElementById("land47").style.display = "none";
+	}
+	else{
+		document.getElementById("land47").style.display = "";
+	}
+	
+	if (propertyNumOwned < 48){
+		document.getElementById("land48").style.display = "none";
+	}
+	else{
+		document.getElementById("land48").style.display = "";
+	}
+	
+	if (propertyNumOwned < 49){
+		document.getElementById("land49").style.display = "none";
+	}
+	else{
+		document.getElementById("land49").style.display = "";
+	}
+	
+	if (propertyNumOwned < 50){
+		document.getElementById("land50").style.display = "none";
+	}
+	else{
+		document.getElementById("land50").style.display = "";
+	}
+	
+	if (propertyNumOwned < 51){
+		document.getElementById("land51").style.display = "none";
+	}
+	else{
+		document.getElementById("land51").style.display = "";
+	}
+	
+	if (propertyNumOwned < 52){
+		document.getElementById("land52").style.display = "none";
+	}
+	else{
+		document.getElementById("land52").style.display = "";
+	}
+	
+	if (propertyNumOwned < 53){
+		document.getElementById("land53").style.display = "none";
+	}
+	else{
+		document.getElementById("land53").style.display = "";
+	}
+	
+	if (propertyNumOwned < 54){
+		document.getElementById("land54").style.display = "none";
+	}
+	else{
+		document.getElementById("land54").style.display = "";
+	}
+	
+	if (propertyNumOwned < 55){
+		document.getElementById("land55").style.display = "none";
+	}
+	else{
+		document.getElementById("land55").style.display = "";
+	}
+	
+	if (propertyNumOwned < 56){
+		document.getElementById("land56").style.display = "none";
+	}
+	else{
+		document.getElementById("land56").style.display = "";
+	}
+	
+	if (propertyNumOwned < 57){
+		document.getElementById("land57").style.display = "none";
+	}
+	else{
+		document.getElementById("land57").style.display = "";
+	}
+	
+	if (propertyNumOwned < 58){
+		document.getElementById("land58").style.display = "none";
+	}
+	else{
+		document.getElementById("land58").style.display = "";
+	}
+	
+	if (propertyNumOwned < 59){
+		document.getElementById("land59").style.display = "none";
+	}
+	else{
+		document.getElementById("land59").style.display = "";
+	}
+	
+	if (propertyNumOwned < 60){
+		document.getElementById("land60").style.display = "none";
+	}
+	else{
+		document.getElementById("land60").style.display = "";
+	}
+	
+	if (propertyNumOwned < 61){
+		document.getElementById("land61").style.display = "none";
+	}
+	else{
+		document.getElementById("land61").style.display = "";
+	}
+	
+	if (propertyNumOwned < 62){
+		document.getElementById("land62").style.display = "none";
+	}
+	else{
+		document.getElementById("land62").style.display = "";
+	}
+	
+	if (propertyNumOwned < 63){
+		document.getElementById("land63").style.display = "none";
+	}
+	else{
+		document.getElementById("land63").style.display = "";
+	}
+	
+	if (propertyNumOwned < 64){
+		document.getElementById("land64").style.display = "none";
+	}
+	else{
+		document.getElementById("land64").style.display = "";
+	}
+	
+	if (propertyNumOwned < 65){
+		document.getElementById("land65").style.display = "none";
+	}
+	else{
+		document.getElementById("land65").style.display = "";
+	}
+	
+	if (propertyNumOwned < 66){
+		document.getElementById("land66").style.display = "none";
+	}
+	else{
+		document.getElementById("land66").style.display = "";
+	}
+	
+	if (propertyNumOwned < 67){
+		document.getElementById("land67").style.display = "none";
+	}
+	else{
+		document.getElementById("land67").style.display = "";
+	}
+	
+	if (propertyNumOwned < 68){
+		document.getElementById("land68").style.display = "none";
+	}
+	else{
+		document.getElementById("land68").style.display = "";
+	}
+	
+	if (propertyNumOwned < 69){
+		document.getElementById("land69").style.display = "none";
+	}
+	else{
+		document.getElementById("land69").style.display = "";
+	}
+	
+	if (propertyNumOwned < 70){
+		document.getElementById("land70").style.display = "none";
+	}
+	else{
+		document.getElementById("land70").style.display = "";
+	}
+	
+	if (propertyNumOwned < 71){
+		document.getElementById("land71").style.display = "none";
+	}
+	else{
+		document.getElementById("land71").style.display = "";
+	}
+	
+	if (propertyNumOwned < 72){
+		document.getElementById("land72").style.display = "none";
+	}
+	else{
+		document.getElementById("land72").style.display = "";
+	}
+	
+	if (propertyNumOwned < 73){
+		document.getElementById("land73").style.display = "none";
+	}
+	else{
+		document.getElementById("land73").style.display = "";
+	}
+	
+	if (propertyNumOwned < 74){
+		document.getElementById("land74").style.display = "none";
+	}
+	else{
+		document.getElementById("land74").style.display = "";
+	}
+	
+	if (propertyNumOwned < 75){
+		document.getElementById("land75").style.display = "none";
+	}
+	else{
+		document.getElementById("land75").style.display = "";
+	}
+	
+	if (propertyNumOwned < 76){
+		document.getElementById("land76").style.display = "none";
+	}
+	else{
+		document.getElementById("land76").style.display = "";
+	}
+	
+	if (propertyNumOwned < 77){
+		document.getElementById("land77").style.display = "none";
+	}
+	else{
+		document.getElementById("land77").style.display = "";
+	}
+	
+	if (propertyNumOwned < 78){
+		document.getElementById("land78").style.display = "none";
+	}
+	else{
+		document.getElementById("land78").style.display = "";
+	}
+	
+	if (propertyNumOwned < 79){
+		document.getElementById("land79").style.display = "none";
+	}
+	else{
+		document.getElementById("land79").style.display = "";
+	}
+	
+	if (propertyNumOwned < 80){
+		document.getElementById("land80").style.display = "none";
+	}
+	else{
+		document.getElementById("land80").style.display = "";
+	}
+	
+	if (propertyNumOwned < 81){
+		document.getElementById("land81").style.display = "none";
+	}
+	else{
+		document.getElementById("land81").style.display = "";
+	}
+	
+	if (propertyNumOwned < 82){
+		document.getElementById("land82").style.display = "none";
+	}
+	else{
+		document.getElementById("land82").style.display = "";
+	}
+	
+	if (propertyNumOwned < 83){
+		document.getElementById("land83").style.display = "none";
+	}
+	else{
+		document.getElementById("land83").style.display = "";
+	}
+	
+	if (propertyNumOwned < 84){
+		document.getElementById("land84").style.display = "none";
+	}
+	else{
+		document.getElementById("land84").style.display = "";
+	}
+	
+	if (propertyNumOwned < 85){
+		document.getElementById("land85").style.display = "none";
+	}
+	else{
+		document.getElementById("land85").style.display = "";
+	}
+	
+	if (propertyNumOwned < 86){
+		document.getElementById("land86").style.display = "none";
+	}
+	else{
+		document.getElementById("land86").style.display = "";
+	}
+	
+	if (propertyNumOwned < 87){
+		document.getElementById("land87").style.display = "none";
+	}
+	else{
+		document.getElementById("land87").style.display = "";
+	}
+	
+	if (propertyNumOwned < 88){
+		document.getElementById("land88").style.display = "none";
+	}
+	else{
+		document.getElementById("land88").style.display = "";
+	}
+	
+	if (propertyNumOwned < 89){
+		document.getElementById("land89").style.display = "none";
+	}
+	else{
+		document.getElementById("land89").style.display = "";
+	}
+	
+	if (propertyNumOwned < 90){
+		document.getElementById("land90").style.display = "none";
+	}
+	else{
+		document.getElementById("land90").style.display = "";
+	}
+	
+	if (propertyNumOwned < 91){
+		document.getElementById("land91").style.display = "none";
+	}
+	else{
+		document.getElementById("land91").style.display = "";
+	}
+	
+	if (propertyNumOwned < 92){
+		document.getElementById("land92").style.display = "none";
+	}
+	else{
+		document.getElementById("land92").style.display = "";
+	}
+	
+	if (propertyNumOwned < 93){
+		document.getElementById("land93").style.display = "none";
+	}
+	else{
+		document.getElementById("land93").style.display = "";
+	}
+	
+	if (propertyNumOwned < 94){
+		document.getElementById("land94").style.display = "none";
+	}
+	else{
+		document.getElementById("land94").style.display = "";
+	}
+	
+	if (propertyNumOwned < 95){
+		document.getElementById("land95").style.display = "none";
+	}
+	else{
+		document.getElementById("land95").style.display = "";
+	}
+	
+	if (propertyNumOwned < 96){
+		document.getElementById("land96").style.display = "none";
+	}
+	else{
+		document.getElementById("land96").style.display = "";
+	}
+	
+	if (propertyNumOwned < 97){
+		document.getElementById("land97").style.display = "none";
+	}
+	else{
+		document.getElementById("land97").style.display = "";
+	}
+	
+	if (propertyNumOwned < 98){
+		document.getElementById("land98").style.display = "none";
+	}
+	else{
+		document.getElementById("land98").style.display = "";
+	}
+	
+	if (propertyNumOwned < 99){
+		document.getElementById("land99").style.display = "none";
+	}
+	else{
+		document.getElementById("land99").style.display = "";
+	}
+	
+	if (propertyNumOwned < 100){
+		document.getElementById("land100").style.display = "none";
+	}
+	else{
+		document.getElementById("land100").style.display = "";
+	}
+	
+	if (propertyNumOwned == 100){
+		document.getElementById("buyPropertyDiv").style.display = "none";
+		document.getElementById("allPlotsBought").style.display = "";
+	}
+	else{
+		document.getElementById("buyPropertyDiv").style.display = "";
+		document.getElementById("allPlotsBought").style.display = "none";
+	}
 }
 		
 function displayMessage(msg){
@@ -229,10 +899,10 @@ function achievementCheck(){
 		displayMessage("Research options are now available.");
 	}
 	
-	if (propertyFlag == 0 && farmerRate >= 1000){
+	if (propertyFlag == 0 && farmerNumber >= 25){
 		propertyFlag = 1;
 		displayMessage("You are now able to expand your farm.");
-		displayMessage("Each plot increases maximum farmer rate by 5000.");
+		displayMessage("Each plot increases maximum farmers allowed by 25.");
 	}
 }
 
@@ -244,7 +914,7 @@ function buttonCheck(){
 		document.getElementById("farmerDiv").style.display = "";
 	}
 	
-	/*if (researchFlag == 0){
+	if (researchFlag == 0){
 		document.getElementById("researchDiv").style.display = "none";
 	}
 	else{
@@ -256,27 +926,32 @@ function buttonCheck(){
 	}
 	else{
 		document.getElementById("propertyDiv").style.display = "";
-	}*/
+	}
 	
 }
 
 function rateUpdate(){
 	farmerRate = farmerNumber * farmerBoost;
 	document.getElementById("potatoFarmingRate").innerHTML = Math.floor(farmerRate).toLocaleString();
+	farmersPerPlot = baseFarmersPerPlot * plotFarmerBoost;
+	document.getElementById("numOfFarmers").innerHTML = farmerNumber;
+	maxFarmers = baseMaxFarmers + propertyNumOwned * farmersPerPlot;
+	document.getElementById("farmerNumLimit").innerHTML = Math.floor(maxFarmers).toLocaleString();
+	document.getElementById("additionalFarmersPerPlot").innerHTML = farmersPerPlot.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
 }
 	
 function adjustSeedPrice(){
     
     seedPriceTimer = seedPriceTimer + 1;
     
-    if (seedPriceTimer>250 && seedBasePrice>15){
+    if (seedPriceTimer>250 && seedBasePrice>10){
         seedBasePrice = seedBasePrice - (seedBasePrice/1000);
         seedPriceTimer = 0;
     }
     
     if (Math.random() < .015) {
         seedPriceCounter = seedPriceCounter + 1;
-        var seedAdjust = 6*(Math.sin(seedPriceCounter));
+        var seedAdjust = 4*(Math.sin(seedPriceCounter));
         seedCost = Math.ceil(seedBasePrice + seedAdjust);
         document.getElementById("seedsCost").innerHTML = seedCost;
         }
@@ -296,7 +971,7 @@ window.setInterval(function(){
 	statisticsUpdate();
 	achievementCheck();
 	advertising = (Math.pow(1.1, (advertisingLevel - 1)));
-	popularity = ((.8/pricePerPotato) * advertising);
+	popularity = ((.70/pricePerPotato) * advertising);
 	popularity = popularity + ((popularity/10)*0);
 	landUpdate();
 }, 1);
